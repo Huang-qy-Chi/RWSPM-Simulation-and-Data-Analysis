@@ -40,7 +40,7 @@ python smoke_test_GWAS.py --backend c --n_process 2 --n_perm 19
 
 On Windows with MinGW-w64 on PATH, run `compile_snp_win.bat` from the `cball_ext` directory in Command Prompt. The smoke test generates its own data and runs both hemispheres. `--backend c` requires a loadable C library. `auto` falls back to NumPy when that library is unavailable. For `--method limit`, also build the separate Ball BDD library as described above.
 
-ADNI data should not be shared publicly and are not included in this repository. If you need the data used for this analysis, please contact XXX (email: [EMAIL TO BE PROVIDED]) regarding access, subject to applicable data-use requirements. Once obtained, place the four files listed below directly in the repository's `Realdata/` folder, alongside `GWAS_left.py` and `GWAS_right.py`. The scripts read this folder by default. Alternatively, place them in another authorized directory and specify its path with `--data_dir`. The genotype input is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
+ADNI data should not be shared publicly and is not included in this repository. If you need the data used for this analysis, contact Prof. Wenliang Pan (email: panwliang@amss.ac.cn) for access, subject to applicable data-use requirements. Once obtained, place the four files listed below directly in the repository's `Realdata/` folder, alongside `GWAS_left.py` and `GWAS_right.py`. The scripts read this folder by default. Alternatively, place them in another authorized directory and specify its path with `--data_dir`. The genotype input is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
 
 | File | Object and layout |
 | --- | --- |
@@ -100,7 +100,7 @@ python smoke_test_GWAS.py --backend c --n_process 2 --n_perm 19
 
 在 Windows 上将 MinGW-w64 加入 PATH，然后在命令提示符中进入 `cball_ext` 运行 `compile_snp_win.bat`。冒烟测试使用现场生成的合成数据运行两个半球。`--backend c` 要求成功加载 C 库。`auto` 在 C 库不可用时回退到 NumPy。`--method limit` 还需要编译独立的 Ball BDD 库，编译方式见上文。
 
-ADNI 数据不宜直接公开，本仓库不提供这些数据。如需获取本分析所用数据，请联系 XXX（邮箱：[待填写]），并遵守适用的数据使用要求。获得数据后，请将下表中的四个文件直接放入仓库的 `Realdata/` 文件夹，与 `GWAS_left.py` 和 `GWAS_right.py` 位于同一目录，脚本默认从该目录读取。也可将文件放在其他获授权的目录，并通过 `--data_dir` 指定路径。基因型输入为抽取的 25,000 个 SNP 数组。所有矩阵必须按同一受试者顺序逐行对齐，矩阵本身无法验证受试者身份。
+ADNI 数据不宜直接公开，本仓库不提供这些数据。如需获取本分析所用数据，请联系 潘文亮 研究员（邮箱：panwliang@amss.ac.cn），并遵守适用的数据使用要求。获得数据后，请将下表中的四个文件直接放入仓库的 `Realdata/` 文件夹，与 `GWAS_left.py` 和 `GWAS_right.py` 位于同一目录，脚本默认从该目录读取。也可将文件放在其他获授权的目录，并通过 `--data_dir` 指定路径。基因型输入为抽取的 25,000 个 SNP 数组。所有矩阵必须按同一受试者顺序逐行对齐，矩阵本身无法验证受试者身份。
 
 | 文件 | 对象与格式 |
 | --- | --- |
