@@ -23,7 +23,7 @@ python -m pip install -r requirements.txt
 python run_simu_parallel_eta.py --settings 1 --n_rep 2 --n 24 --M1 14 --M2 11 --window_width 7 --n_workers 1 --method gamma --n_perm 19
 ```
 
-This small example checks execution. For experiment runs, set the settings, sample size, replication count, window width and calibration method explicitly. Omitting `--window_width` on the command line enables JSD-based width selection. Use `--eta` to change the truncation boundary. Use `--help` for the complete options. The default output directory `Simulation/data/result/` (when run from `Simulation/`) contains per-region statistics and p-values and one cluster-level p-value per replication.
+This small example checks execution. For experiment runs, set the settings, sample size, replication count, window width, and calibration method explicitly. Omitting `--window_width` on the command line enables JSD-based width selection. Use `--eta` to change the truncation boundary. Use `--help` for the complete options. The default output directory `Simulation/data/result/` (when run from `Simulation/`) contains per-region statistics and p-values and one cluster-level p-value per replication.
 
 The simulation supports `gamma`, `permu` and `limit`. Build the Ball BDD library for `limit` using `bash cball_ext/compile_linux.sh` on Linux. On Windows with MinGW-w64 on PATH, run `compile_win.bat` from the `cball_ext` directory in Command Prompt.
 
@@ -40,7 +40,7 @@ python smoke_test_GWAS.py --backend c --n_process 2 --n_perm 19
 
 On Windows with MinGW-w64 on PATH, run `compile_snp_win.bat` from the `cball_ext` directory in Command Prompt. The smoke test generates its own data and runs both hemispheres. `--backend c` requires a loadable C library. `auto` falls back to NumPy when that library is unavailable. For `--method limit`, also build the separate Ball BDD library as described above.
 
-ADNI data should not be shared publicly and is not included in this repository. If you need the data used for this analysis, contact Prof. Wenliang Pan (email: panwliang@amss.ac.cn) for access, subject to applicable data-use requirements. Once obtained, place the four files listed below directly in the repository's `Realdata/` folder, alongside `GWAS_left.py` and `GWAS_right.py`. The scripts read this folder by default. Alternatively, place them in another authorized directory and specify its path with `--data_dir`. The genotype input is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
+ADNI data should not be shared publicly and is not included in this repository. If you need the data used for this analysis, please contact Prof. Wenliang Pan (email: panwliang@amss.ac.cn) for access, subject to applicable data-use requirements. Once obtained, place the four files listed below directly in the repository's `Realdata/` folder, alongside `GWAS_left.py` and `GWAS_right.py`. The scripts read this folder by default. Alternatively, place them in another authorized directory and specify its path with `--data_dir`. The genotype input is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
 
 | File | Object and layout |
 | --- | --- |
