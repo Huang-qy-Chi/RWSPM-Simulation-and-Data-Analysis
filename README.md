@@ -1,10 +1,10 @@
-# RWSPM — Region-Wise Statistical Parametric Mapping
+# RW-SPM — Region-Wise Statistical Parametric Mapping
 
 **Language / 语言** · [English](#english) · [简体中文](#简体中文)
 
 ## English
 
-RWSPM partitions images into overlapping windows, transforms each window with the log quantile density (LQD) representation, runs a regional Ball Covariance (BCov) test, and combines the connected significant regions with RW-MTCCT. The repository contains two independent Python workflows. Both use an interior LQD quantile grid from `eta` to `1 - eta`, with default `eta = 1e-3` and 21 grid points.
+RW-SPM partitions images into overlapping windows, transforms each window with the log quantile density (LQD) representation, runs a regional Ball Covariance (BCov) test, and combines the connected significant regions with RW-MTCCT. The repository contains two independent Python workflows. Both use an interior LQD quantile grid from `eta` to `1 - eta`, with default `eta = 1e-3` and 21 grid points.
 
 | Directory | Workflow |
 | --- | --- |
@@ -64,7 +64,7 @@ See [third-party source notices](THIRD_PARTY_NOTICES.md) for the bundled Ball so
 
 ## 简体中文
 
-RWSPM 用重叠滑窗划分图像，对各窗口做对数分位密度（LQD）变换，使用 Ball Covariance（BCov）进行区域检验，再以 RW-MTCCT 聚合空间连通的显著区域。两个目录可独立运行，均默认在 `[eta, 1 - eta]` 上使用 21 个等距分位点，`eta = 1e-3`。
+RW-SPM 用重叠滑窗划分图像，对各窗口做对数分位密度（LQD）变换，使用 Ball Covariance（BCov）进行区域检验，再以 RW-MTCCT 聚合空间连通的显著区域。两个目录可独立运行，均默认在 `[eta, 1 - eta]` 上使用 21 个等距分位点，`eta = 1e-3`。
 
 | 目录 | 用途 |
 | --- | --- |
