@@ -9,7 +9,7 @@ RWSPM partitions images into overlapping windows, transforms each window with th
 | Directory | Workflow |
 | --- | --- |
 | [Simulation](Simulation/) | Seven synthetic settings. Each region in the selected cluster contributes to the Cauchy statistic with fixed weight `1/m`, where `m` is the total number of windows. |
-| [Realdata](Realdata/) | Left and right hippocampal SNP scans with covariate adjustment, a compiled SNP-specific BCov kernel and a NumPy backend. The private local copy includes the preprocessed inputs below. Git ignores these data files and analysis outputs. |
+| [Realdata](Realdata/) | Left and right hippocampal SNP scans with covariate adjustment, a compiled SNP-specific BCov kernel and a NumPy backend. ADNI data are not included in this repository. |
 
 Use Python 3.12 and install the requirements for the workflow you want to run.
 
@@ -40,7 +40,7 @@ python smoke_test_GWAS.py --backend c --n_process 2 --n_perm 19
 
 On Windows with MinGW-w64 on PATH, run `compile_snp_win.bat` from the `cball_ext` directory in Command Prompt. The smoke test generates its own data and runs both hemispheres. `--backend c` requires a loadable C library. `auto` falls back to NumPy when that library is unavailable. For `--method limit`, also build the separate Ball BDD library as described above.
 
-In the private local copy, the four preprocessed matrices below are next to the GWAS scripts in `Realdata/`, so the scripts find them by default. Use `--data_dir` to read the same files from a different authorized directory. The only genotype input in this copy is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
+ADNI data should not be shared publicly and are not included in this repository. If you need the data used for this analysis, please contact XXX (email: [EMAIL TO BE PROVIDED]) regarding access, subject to applicable data-use requirements. Once obtained, place the four files listed below directly in the repository's `Realdata/` folder, alongside `GWAS_left.py` and `GWAS_right.py`. The scripts read this folder by default. Alternatively, place them in another authorized directory and specify its path with `--data_dir`. The genotype input is the sampled 25,000-SNP array. The pipeline assumes the same subjects in the same row order in all matrices and cannot verify subject identity from the matrices.
 
 | File | Object and layout |
 | --- | --- |
@@ -69,7 +69,7 @@ RWSPM 用重叠滑窗划分图像，对各窗口做对数分位密度（LQD）�
 | 目录 | 用途 |
 | --- | --- |
 | [Simulation](Simulation/) | 七种模拟设置。入选簇中的每个区域以固定权重 `1/m` 计入 Cauchy 统计量，`m` 为筛选前的区域总数。 |
-| [Realdata](Realdata/) | 左右海马 SNP 关联分析，包含协变量校正、SNP 专用 BCov C 内核和 NumPy 后端。本机私有副本包含下列预处理输入，Git 会忽略这些数据文件和分析结果。 |
+| [Realdata](Realdata/) | 左右海马 SNP 关联分析，包含协变量校正、SNP 专用 BCov C 内核和 NumPy 后端。本仓库不包含 ADNI 数据。 |
 
 使用 Python 3.12，并安装对应目录的依赖。
 
@@ -100,7 +100,7 @@ python smoke_test_GWAS.py --backend c --n_process 2 --n_perm 19
 
 在 Windows 上将 MinGW-w64 加入 PATH，然后在命令提示符中进入 `cball_ext` 运行 `compile_snp_win.bat`。冒烟测试使用现场生成的合成数据运行两个半球。`--backend c` 要求成功加载 C 库。`auto` 在 C 库不可用时回退到 NumPy。`--method limit` 还需要编译独立的 Ball BDD 库，编译方式见上文。
 
-本机私有副本将下列四个预处理矩阵放在 `Realdata/` 中，与 GWAS 脚本同目录，脚本默认直接读取。若从其他获授权的目录读取同名文件，可通过 `--data_dir` 指定。此副本中的基因型输入仅为抽取的 25,000 个 SNP。所有矩阵必须按同一受试者顺序逐行对齐，矩阵本身无法验证受试者身份。
+ADNI 数据不宜直接公开，本仓库不提供这些数据。如需获取本分析所用数据，请联系 XXX（邮箱：[待填写]），并遵守适用的数据使用要求。获得数据后，请将下表中的四个文件直接放入仓库的 `Realdata/` 文件夹，与 `GWAS_left.py` 和 `GWAS_right.py` 位于同一目录，脚本默认从该目录读取。也可将文件放在其他获授权的目录，并通过 `--data_dir` 指定路径。基因型输入为抽取的 25,000 个 SNP 数组。所有矩阵必须按同一受试者顺序逐行对齐，矩阵本身无法验证受试者身份。
 
 | 文件 | 对象与格式 |
 | --- | --- |
