@@ -13,6 +13,10 @@ RW-SPM partitions images into overlapping windows, transforms each window with t
 
 Use Python 3.12 and install the requirements for the workflow you want to run.
 
+### Original implementation and comparison methods
+
+The original repository is included in [`Original_Implementation/`](Original_Implementation/), preserving its R core functions, simulation settings, comparison methods, real-data scripts, documentation, R package and code archive. This import is a source snapshot from [`chuangli66/RWSPM`](https://github.com/chuangli66/RWSPM) at commit `3f895030bf1155b7553807c999781ffe3f94d69d`. See [import provenance](Original_Implementation/IMPORT_PROVENANCE.md) and the [original README](Original_Implementation/README.md). Run the original scripts with `Original_Implementation/` as the working directory where relative paths require it. This snapshot has not undergone a code review or runtime verification as part of the import. The Python and original implementations use different defaults, including LQD endpoints, aggregation weights and ADNI screening thresholds. Select the implementation and configuration corresponding to the results you intend to reproduce.
+
 ### Simulation
 
 From the repository root:
@@ -72,6 +76,10 @@ RW-SPM 用重叠滑窗划分图像，对各窗口做对数分位密度（LQD）�
 | [Realdata](Realdata/) | 左右海马 SNP 关联分析，包含协变量校正、SNP 专用 BCov C 内核和 NumPy 后端。本仓库不包含 ADNI 数据。 |
 
 使用 Python 3.12，并安装对应目录的依赖。
+
+### 原始实现与竞争方法
+
+原仓库已完整纳入 [`Original_Implementation/`](Original_Implementation/)，包含 R 核心函数、模拟设置、竞争方法、实际数据脚本、文档、R 包及代码归档。此次导入为 [`chuangli66/RWSPM`](https://github.com/chuangli66/RWSPM) 在提交 `3f895030bf1155b7553807c999781ffe3f94d69d` 的源码快照，详见[来源记录](Original_Implementation/IMPORT_PROVENANCE.md)和[原版 README](Original_Implementation/README.md)。涉及相对路径时，请以 `Original_Implementation/` 为原版脚本的工作目录。本次导入尚未进行代码检查或运行验证。Python 版本与原始实现的默认设置存在差异，包括 LQD 端点、聚合权重和 ADNI 区域筛选阈值，请按拟复现结果选择实现和配置。
 
 ### 模拟实验
 
