@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.dll
+*.so
+*.dylib
+*.log
+/Simulation/data/
+/Realdata/data/
+/Realdata/results_gwas_*/
+*.rdata
+*.RData
+*.rds
+*.npy
+*.npz
